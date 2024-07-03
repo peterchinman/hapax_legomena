@@ -4,7 +4,7 @@
 #include <list>
 #include <cstring>
 #include <regex>
-#include "MurmurHash2.h"
+#include "../external/MurmurHash2.h"
 
 class HashTable {
     private:
@@ -29,7 +29,7 @@ class HashTable {
 };
 
 bool HashTable::isEmpty()
-{
+{ 
     int sum{};
     for (int i{}; i < hashGroups; ++i)
     {
@@ -125,6 +125,9 @@ void HashTable::printLegomena(std::string outputFilename, int depth)
 }
 
 void word_check(HashTable& HT, std::string& word_by_word);
+
+
+// usage: ./main <input_filename> <output_filename> and then an optional <int legomena_depth>
 
 int main(int argc, char *argv[])
 {
