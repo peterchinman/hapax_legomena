@@ -132,15 +132,16 @@ void word_check(HashTable& HT, std::string& word_by_word);
 int main(int argc, char *argv[])
 {
 
-    if (argc != 3) {
+    if (argc != 3 || argc != 2) {
         std::cerr << "Usage: " << argv[0] << " <input_filename> <output_filename>, and then an option int legomena_depth" << std::endl;
         return 1;
     }
     
     // Open Text
     
-
     std::ifstream text{argv[1]};
+
+  
 
     if (!text)
     {
@@ -160,13 +161,15 @@ int main(int argc, char *argv[])
         word_check(HT, word_by_word);
 
 
-    //first get depth if it exists from argv, otherwise set equal to 1
+    std::string output_file{argv[2]};
+
+    // get depth if it exists from argv, otherwise set equal to 1
     int depth{1};
     if (argv[3])
     {
         sscanf (argv[3],"%d",&depth);
     }
-    std::string output_file{argv[2]};
+
 
 
     HT.printLegomena(output_file,depth);
