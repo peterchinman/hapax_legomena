@@ -132,10 +132,11 @@ void word_check(HashTable& HT, std::string& word_by_word);
 int main(int argc, char *argv[])
 {
 
-    if (argc != 3 || argc != 2) {
-        std::cerr << "Usage: " << argv[0] << " <input_filename> <output_filename>, and then an option int legomena_depth" << std::endl;
-        return 1;
-    }
+    // I think this code is correct but for some reason not working with wasm
+    // if (argc != 3 && argc != 2) {
+    //     std::cerr << "Usage: " << argv[0] << " <input_filename> <output_filename>, and then an option int legomena_depth" << std::endl;
+    //     return 1;
+    // }
     
     // Open Text
     
